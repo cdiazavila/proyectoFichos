@@ -1,0 +1,171 @@
+*{
+    padding: 0%;
+    margin: 0;
+    font-family: Arial;
+}
+body{
+    min-height: 90vh;
+    background-color: rgb(203, 247, 205);
+}
+
+header{
+    height: 100px;
+    background-color: rgb(4, 161, 17);
+
+}
+
+header img{
+    width: 100px;
+    height: 100px;
+    float: left;
+ 
+}
+ 
+header h4{
+    float: left;
+     width:10%;
+     color: floralwhite;
+     font-size: medium;
+    
+}
+header h2{
+   
+     color: floralwhite;
+     margin-top: 0%;   
+     text-align: left; 
+     
+}
+
+nav{
+    height: 30px;
+    background-color: rgb(174, 250, 177);
+}
+
+
+nav ul{
+    
+        list-style-type: none;
+        text-align: center;
+        margin-left: 25px;
+        
+    
+}
+
+nav li{
+    font-weight: bold;
+    padding: 10px;
+    color:#ffffff ;
+    display: inline;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+aside{
+    min-height: 80vh;
+    background-color: rgb(203, 247, 205);
+    float: left; 
+    width:20%;
+
+    
+    }
+    aside #formulario{
+        margin-left: 50px;
+    }
+    
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select{
+  box-sizing: border-box;
+  padding: 0px; 
+  margin: 10px;
+  margin-top: 4px;
+  
+}
+
+
+
+select{
+    padding: 5px;
+    
+  }
+
+aside label{
+    margin: 10px;
+    color: #139511;
+    display: block;
+    font-size: .9em;
+    padding: 4px 0px 2px 0px;
+
+}
+
+aside button{
+    padding: 6px 27px 7px 26px;
+    text-decoration: none;
+    font-size: .75em;
+    font-weight: bold;
+    color: #556;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bfbfbf #139511 #139511 #bfbfbf;
+    background-color: rgb(170, 247, 170);
+    margin: 10px;
+}
+  a, a:link, a:active, a:visited {
+    text-decoration: none;
+    color: #3683ba;
+    margin: 55px;
+   
+}
+    
+
+ #tabla{
+        padding-top: 100px;
+        width: 50%;
+        margin-bottom: 1rem;
+        margin-left: 300px;
+        margin-top: -60px;
+
+        color: #212529;
+      
+
+}
+    section #container{
+        min-height: 80vh;
+        background-color: rgb(3, 17, 29);
+        float: left;
+        width:70%;
+    }
+
+    #respuesta{
+        text-align: center;
+    }
+    #container p{
+        color: #000000;
+        margin-left: 20px;
+    }
+    #container h6{
+        color: #08f34e;
+        margin-left: 20px;
+    }
+    footer{
+        height: 40px;
+        background-color: rgb(203, 247, 205);
+        clear: both;
+        text-align: center;
+        color: forestgreen;
+    }
+    @media screen and ( max-width:200px){
+        aside{
+            width: 100%;
+            display: none;
+        }
+        
+        selection#container{
+            width: 100%;
+            
+        }
+    }
+    

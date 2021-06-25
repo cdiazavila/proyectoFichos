@@ -1,0 +1,122 @@
+*{
+    padding: 0%;
+    margin: 0;
+    font-family: Arial;
+}
+body{
+    min-height: 90vh;
+    background-color: rgb(203, 247, 205);
+}
+
+header{
+    height: 100px;
+    background-color: rgb(4, 161, 17);
+
+}
+
+header img{
+    width: 100px;
+    height: 100px;
+    float: left;
+ 
+}
+ 
+header h4{
+    float: left;
+     width:10%;
+     color: floralwhite;
+    margin-top: 25px;
+    
+}
+header h2{
+   
+     color: floralwhite;
+     margin-top: 0%;   
+     text-align: left; 
+     margin-top: 25px;
+   
+}
+
+header .datos {
+   
+    color: floralwhite;  
+    text-align: right; 
+    margin-top: -30px;
+    margin-right: 10px;
+  
+}
+
+nav{
+    height: 30px;
+    background-color: rgb(174, 250, 177);
+
+}
+nav ul{
+    
+        list-style-type: none;
+        text-align: center;
+        margin-left: 25px;
+        
+    
+}
+
+nav li{
+    font-weight: bold;
+    padding: 10px;
+    color:#ffffff ;
+    display: inline;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+aside{
+    min-height: 80vh;
+    background-color: rgb(203, 247, 205);
+    float: left; 
+    width:25%;
+
+    
+    }
+    aside #formulario{
+        margin-left: 50px;
+    }
+    
+
+  a, a:link, a:active, a:visited {
+    text-decoration: none;
+    color: #3683ba;
+    margin: 55px;
+}
+    
+    section #container{
+        min-height: 80vh;
+        float: left;
+        width:70%;
+
+    }
+
+    footer{
+        height: 10px;
+        background-color: rgb(203, 247, 205);
+        clear: both;
+        text-align: center;
+        color: forestgreen;
+        margin-bottom: 45px;
+        
+    }
+    @media screen and ( max-width:200px){
+        aside{
+            width: 100%;
+            display: none;
+        }
+        
+        selection#container{
+            width: 100%;
+            
+        }
+    }
+    
+    
