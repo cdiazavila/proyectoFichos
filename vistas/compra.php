@@ -72,9 +72,6 @@
                         </select>
              
                       <br>
-                      <label for="carrera">Carrera que estudia</label> 
-                      <input type="text" name="carrera" id="carrera" placeholder="Carrera" > <br>
-        
                       <input type="text" name="fecha" id="fecha"> <br>
                       <hr>
                     

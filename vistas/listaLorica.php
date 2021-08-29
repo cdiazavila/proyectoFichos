@@ -7,14 +7,12 @@
     <title>lista de compra</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/styleLista_compra.css">
+    <script src="dist/jspdf.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+   
 </head>
 <body>
-<?php
-    session_start();
-    if(!isset($_SESSION["usuarios"])){
-     header("location:../index.php");
-     }
-?>
+
     <header>
         <img src="../img/logo2.png" alt="" srcset=""> 
         <h4>Universidad
@@ -30,9 +28,9 @@
        
         <ul>
             <li><a href="paginaPrincipal.php"> Ir Inicio</a> </li>
-            <li> <a href="compra.php">Comprar Fichos</a></li>
-            <li><a href="historia.php"> Mi Historial Compra</a></li>
-            <li> <a href="cerrer_sesion.php"  onclick="localStorage.clear()">Cerrar Sesion</a></li>
+            <li><a href="vistas/listaMonteria.php">Lista Monteria</a></li>
+            <li><a href="vistas/listaSahagun.php">Lista Sahagun</a></li>
+            <li><a href="vistas/listaBerastigui.php">Lista Berastigui</a></li>
         </ul>
         
     </nav>
@@ -40,16 +38,17 @@
     
      
     <aside>
+        <div clase="col-md-12 ml-5">
+          <p id="cantidadComprada"></p>
+          <p id="cantidadDisponible"></p>
+        </div>
       <form id="formulario" method="post">
-      <label for="sede">Selecciona la Sede</label> 
-                <select id="sede" name="sede" class="form-control" >
-                    <option value="">Elige tu sede</option> 
-                     
-                    </select>
-                    <input type="text" id="inputFecha" name = "fecha">
-                    <br>
-                  
-                    <button  type="button" class="btn btn-primary" id="boton">Buscar</button>
+          <div clase="inputs">
+          <input type="text" id="sede" name="sede">
+          <input type="text" id="fecha" name="fecha">
+  
+          </div>
+         <button  type="button" class="btn btn-primary" id="boton">DESCARGAR</button>
       
       </form>
     </aside>
@@ -73,12 +72,14 @@
 
        </table>
        </div>
+       <div id="elementH"></div>
     </section>
     <aside>
-      
+   
     </aside>
     <footer>Universidad de Cordoba &copf; </footer>
 
-    <script src="../js/listaCompra.js"></script>
+    <script src="../js/listaLorica.js"></script>
+    <script src="../dist/jspdf.min.js"></script>
 </body>
 </html>

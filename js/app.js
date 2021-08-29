@@ -7,7 +7,7 @@ let nombre=localStorage.getItem('nombre');
 let apellidos=localStorage.getItem('apellido');
 let saldo=localStorage.getItem('saldo');
 
-parrafo.textContent=`Bienvedido ${nombre} ${apellidos}`;
+parrafo.textContent=`Bienvedido/a ${nombre} ${apellidos}`;
 saldoActual.textContent='Saldo: '+saldo+' Mil Pesos';
 
    

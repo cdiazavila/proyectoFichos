@@ -80,6 +80,21 @@ aside{
         margin-left: 50px;
     }
     
+    aside #formulario select {
+        display: flex;
+        width: 153px;
+     
+    }
+
+    aside #formulario #inputFecha {
+       display: none;
+     
+    }
+
+    aside #formulario input{
+        display: none;
+    }
+   
 
   a, a:link, a:active, a:visited {
     text-decoration: none;
@@ -100,7 +115,7 @@ aside{
         width: 60%;
         margin-left: 300px;
         color: #212529;
-        margin-top: 50  px;
+        margin-top: 50px;
         
 
 }

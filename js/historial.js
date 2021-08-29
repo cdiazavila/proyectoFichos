@@ -36,7 +36,7 @@ resivoDatos();
               </tr>
              
               `;
-            
+          
           }
           
           tabla.appendChild(tbody);

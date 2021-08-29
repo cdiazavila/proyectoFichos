@@ -25,6 +25,12 @@
     </header> 
     <hr>
     <nav>
+        <ul>
+            <li><a href="vistas/listaLorica.php">Lista Lorica</a></li>
+            <li><a href="vistas/listaMonteria.php">Lista Monteria</a></li>
+            <li><a href="vistas/listaSahagun.php">Lista Sahagun</a></li>
+            <li><a href="vistas/listaBerastigui.php">Lista Berastigui</a></li>
+        </ul>
     </nav>
     <hr>
 
