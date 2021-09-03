@@ -2,7 +2,7 @@
   try{
     $id=$_POST['id'];
     include_once('conexion.php');
-    $sql="UPDATE estudiante SET estudiante.saldo=(estudiante.saldo-1000) WHERE estudiante.cc='$id'"
+    $sql="UPDATE estudiante SET estudiante.saldo=(saldo-1000) WHERE estudiante.cc='$id'";
     $resultado=$conexion->prepare($sql);
     $resultado->execute();
     echo json_encode('si');

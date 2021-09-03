@@ -12,12 +12,15 @@ const mesActual = fecha.getMonth() + 1;
 var datosSede=new Array(1);
 let idC=localStorage.getItem('cedula');
 var numeroRegistros=new Array(1);
+var numeroComprasEstudiante=new Array(1);
+var saldo=localStorage.getItem('saldo');
 
 // creamos el evento addEventListener
  window.addEventListener('load',()=>{
     inputFecha.value= anoActual+'-'+mesActual+'-'+dia;
     inputFecha.style.display='none';
     obtenerDatosSede();
+  
  });
 
 formulario.addEventListener('submit',(e)=>{
@@ -27,9 +30,9 @@ formulario.addEventListener('submit',(e)=>{
 
 });
 
-/* con este metodo actualizo el saldo del estudiante cuando la compra es exitosa 
 
-*/
+
+
 
 
 function actualizarSaldo(){
@@ -41,10 +44,16 @@ function actualizarSaldo(){
     })
     .then(res => res.json())
     .then( inf => {
-        console.log(inf);
+       if(inf==='si'){
+      
+        let actualizado=saldo-1000;
+        localStorage.setItem('saldo',actualizado); 
+       }
+
     });
 
 }
+
 
 /* Metodo para consultar  cuantos fichos se han comprado en la sede seleccionada por los 
    estudiantes en un dia x 
@@ -77,6 +86,7 @@ fetch(url,{
        
     }else  if(sede.value==='2' && numeroRegistros[0]<500){
         enviarDatos();
+        actualizarSaldo();
         formulario.reset();
         respuesta.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -86,6 +96,7 @@ fetch(url,{
        
     }else  if(sede.value==='3' && numeroRegistros[0]<150){
         enviarDatos();
+        actualizarSaldo();
         formulario.reset();
         respuesta.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -95,6 +106,7 @@ fetch(url,{
        
     }else  if(sede.value==='4' && numeroRegistros[0]<100){
         enviarDatos();
+        actualizarSaldo();
         formulario.reset();
         respuesta.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -112,10 +124,6 @@ fetch(url,{
    
     }
   
-   
-    console.log(numeroRegistros[0])
-   
-    
 });
 
 }
@@ -177,8 +185,12 @@ if(confId.value=="" || sede.value=="" || semestre.value =="" || inputFecha.value
     if(confId.value!=idC){
         respuesta.innerHTML = `
          <div class="alert alert-danger" role="alert">Id Del Estudiante Incorrecto!</div>`;
+    }else if(saldo<1000){
+        respuesta.innerHTML = `
+        <div class="alert alert-danger" role="alert">Su saldo es Insuficinte!</div>`;
     }else{
-        cantidadFichosSede();
+       
+        consultarComprarEstudiante();
     }
        
 }
@@ -186,4 +198,31 @@ if(confId.value=="" || sede.value=="" || semestre.value =="" || inputFecha.value
 setTimeout(()=>{
     respuesta.style.display = 'none';
 },2000);
+}
+
+
+/* con este metodo consulto las compras realizadas diarias del Estudiante*/
+function consultarComprarEstudiante(){
+    var datos = new FormData(formulario); 
+    var url = '../php/consultarComprasEstudiante.php';
+    fetch(url,{
+       method: 'POST',
+       body: datos 
+    })
+    .then(res => res.json())
+    .then( inf => {
+
+     for(let i=0; i<inf.length; i++){
+        numeroComprasEstudiante[i]=inf[i].numeroCompras;    
+    }
+
+    if(numeroComprasEstudiante[0]>=1){
+        respuesta.innerHTML = `
+        <div class="alert alert-danger" role="alert">Accede a la Compra Diaria!</div>`;
+    } else{
+        cantidadFichosSede();
+      
+    }
+    });
+
 }

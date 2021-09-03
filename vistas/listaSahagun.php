@@ -27,8 +27,8 @@
        
         <ul>
             <li><a href="paginaPrincipal.php"> Ir Inicio</a> </li>
+            <li><a href="listaLorica.php">Lista Lorica</a></li>
             <li><a href="listaMonteria.php">Lista Monteria</a></li>
-            <li><a href="listaSahagun.php">Lista Sahagun</a></li>
             <li><a href="listaBerastigui.php">Lista Berastigui</a></li>
         </ul>
         
@@ -78,7 +78,7 @@
     </aside>
     <footer>Universidad de Cordoba &copf; </footer>
 
-    <script src="../js/listaLorica.js"></script>
+    <script src="../js/listaSahagun.js"></script>
     <script src="../js/dist/jspdf.min.js"></script>
 </body>
 </html>

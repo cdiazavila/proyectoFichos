@@ -16,14 +16,14 @@ let diaActual= fechaactual.getDate();
 
 window.addEventListener('load',()=>{
    fecha.value=anoActual+'-'+mesActual+'-'+diaActual;
-   sede.value=1;
-   ListaLorica();
+   sede.value=4;
+   Listaberastigui();
 });
 
 
 // metodo para crear la peticion del listado de las compras diarias de la sede lorica 
 
-function ListaLorica(){
+function Listaberastigui(){
     var datos = new FormData(formulario);
     var url ='../php/informacionVentaPorSede.php';
     fetch(url,{
@@ -62,7 +62,6 @@ function ListaLorica(){
 }
 
 
-
 // evento click
 boton.addEventListener('click',()=>{
   var doc = new jsPDF();
@@ -81,6 +80,6 @@ boton.addEventListener('click',()=>{
   });
   
   // Save the PDF
-  doc.save('sede-lorica.pdf');
+  doc.save('sede-Berastigui.pdf');
 
 })

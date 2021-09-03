@@ -16,14 +16,14 @@ let diaActual= fechaactual.getDate();
 
 window.addEventListener('load',()=>{
    fecha.value=anoActual+'-'+mesActual+'-'+diaActual;
-   sede.value=1;
-   ListaLorica();
+   sede.value=2;
+   ListaMonteria();
 });
 
 
 // metodo para crear la peticion del listado de las compras diarias de la sede lorica 
 
-function ListaLorica(){
+function ListaMonteria(){
     var datos = new FormData(formulario);
     var url ='../php/informacionVentaPorSede.php';
     fetch(url,{
@@ -46,7 +46,7 @@ function ListaLorica(){
            
             `;
         }
-        let cantidad=100-data.length;
+        let cantidad=500-data.length;
         cantidadComprada.textContent=`Cantidad de Compra: ${data.length} Fichos`;
         if(cantidad===0){
           cantidadDisponible.textContent='No Hay Fichos Disponibes';
@@ -81,6 +81,6 @@ boton.addEventListener('click',()=>{
   });
   
   // Save the PDF
-  doc.save('sede-lorica.pdf');
+  doc.save('sede-Monteria.pdf');
 
 })
