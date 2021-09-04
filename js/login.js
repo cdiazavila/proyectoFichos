@@ -55,6 +55,7 @@ function obtenerDatos(){
     localStorage.setItem('apellido',datas[i].apellidos); 
     localStorage.setItem('cedula',datas[i].cc); 
     localStorage.setItem('saldo',datas[i].saldo); 
+    localStorage.setItem('carrera',datas[i].carrera); 
    
   }
   

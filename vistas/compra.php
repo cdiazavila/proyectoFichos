@@ -72,7 +72,7 @@
                         </select>
              
                       <br>
-                      <input type="text" name="fecha" id="fecha"> <br>
+                      <input type="text" name="fecha" id="fecha"><br>
                       <hr>
                     
                  <button type="submit" name="guardar">Comprar</button>
@@ -87,5 +87,6 @@
     </section>
     <footer>Universidad de Cordoba &copf; </footer>
     <script src="../js/compra.js"></script>
+    <script src="../js/dist/jspdf.min.js"></script>
 </body>
 </html>

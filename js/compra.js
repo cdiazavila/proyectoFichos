@@ -14,7 +14,9 @@ let idC=localStorage.getItem('cedula');
 var numeroRegistros=new Array(1);
 var numeroComprasEstudiante=new Array(1);
 var saldo=localStorage.getItem('saldo');
-
+var nombre=localStorage.getItem('nombre');
+var apellidos=localStorage.getItem('apellido');
+var carrera=localStorage.getItem('carrera');
 // creamos el evento addEventListener
  window.addEventListener('load',()=>{
     inputFecha.value= anoActual+'-'+mesActual+'-'+dia;
@@ -31,7 +33,34 @@ formulario.addEventListener('submit',(e)=>{
 });
 
 
+//metodo para descargar el ficho 
+function obtenerFicho(){
+    var doc = new jsPDF();
+        
+    doc.setFontSize(26);
+    doc.text(20, 20, 'FICHOS UNICOR');
 
+    doc.text(20, 40,  confId.value );
+
+    doc.text(20, 50, nombre +' '+apellidos);
+    if(sede.value==='1'){
+        doc.text(20, 60, 'sede Lorica');
+    } if(sede.value==='2'){
+        doc.text(20, 60, 'sede Monteria'); 
+    }if(sede.value==='3'){
+        doc.text(20, 60, 'sede Sahagun'); 
+    } if(sede.value==='4'){
+        doc.text(20, 60, 'sede Berastigui'); 
+    }       
+  
+    doc.text(20, 70,  carrera);
+    doc.text(20, 80,  inputFecha.value );
+    
+    
+    // Save the PDF
+    doc.save(`ficho-${nombre}.pdf`);
+  
+}
 
 
 
@@ -77,6 +106,7 @@ fetch(url,{
     if(sede.value==='1' && numeroRegistros[0]<100){
         enviarDatos();
         actualizarSaldo();
+        obtenerFicho();
         formulario.reset();
         respuesta.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -87,6 +117,7 @@ fetch(url,{
     }else  if(sede.value==='2' && numeroRegistros[0]<500){
         enviarDatos();
         actualizarSaldo();
+        obtenerFicho();
         formulario.reset();
         respuesta.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -97,6 +128,7 @@ fetch(url,{
     }else  if(sede.value==='3' && numeroRegistros[0]<150){
         enviarDatos();
         actualizarSaldo();
+        obtenerFicho();
         formulario.reset();
         respuesta.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -107,6 +139,7 @@ fetch(url,{
     }else  if(sede.value==='4' && numeroRegistros[0]<100){
         enviarDatos();
         actualizarSaldo();
+        obtenerFicho();
         formulario.reset();
         respuesta.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -219,9 +252,10 @@ function consultarComprarEstudiante(){
     if(numeroComprasEstudiante[0]>=1){
         respuesta.innerHTML = `
         <div class="alert alert-danger" role="alert">Accede a la Compra Diaria!</div>`;
+      
     } else{
         cantidadFichosSede();
-      
+         
     }
     });
 

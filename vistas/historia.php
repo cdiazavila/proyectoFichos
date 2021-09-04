@@ -77,5 +77,6 @@
     <footer>Universidad de Cordoba &copf; </footer>
 
     <script  src="../js/historial.js"></script>
+  
 </body>
 </html>
